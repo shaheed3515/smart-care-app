@@ -72,12 +72,15 @@
                     .insert([data])
                     .select();
 
-                if (error) throw error;
+                if (error) {
+                    console.error("Supabase Insert Error:", error);
+                    throw error;
+                }
                 console.log("Patient added:", insertedData);
                 return insertedData[0].id;
             } catch (e) {
                 console.error("Error adding patient: ", e);
-                throw e;
+                throw e; // Rethrow to be caught by the UI
             }
         },
 

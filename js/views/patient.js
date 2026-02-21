@@ -481,7 +481,8 @@
                     await window.App.DB.addPatient(state.patientData);
                     setStep(6);
                 } catch (e) {
-                    alert("Failed to confirm booking. Please try again.");
+                    const errorMsg = e.message || e.details || "Unknown error";
+                    alert(`Failed to confirm booking: ${errorMsg}\n\nPlease ensure you have run the SQL setup script in your Supabase dashboard.`);
                     btn.disabled = false;
                     btn.innerHTML = originalText;
                     lucide.createIcons();
