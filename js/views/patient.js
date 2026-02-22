@@ -393,8 +393,8 @@
 
         // --- STEP 1 HANDLERS (Details) ---
         if (state.step === 1) {
-            container.querySelector('#input-name').oninput = (e) => updatePatientData('name', e.target.value);
-            container.querySelector('#input-age').oninput = (e) => updatePatientData('age', e.target.value);
+            container.querySelector('#input-name').oninput = (e) => updatePatientData('name', e.target.value, true);
+            container.querySelector('#input-age').oninput = (e) => updatePatientData('age', e.target.value, true);
             container.querySelector('#input-gender').onchange = (e) => updatePatientData('gender', e.target.value);
 
             // Radio buttons for doctorPref
@@ -466,7 +466,7 @@
 
         // --- OTHER STEPS ---
         if (state.step === 4) {
-            container.querySelector('#input-symptoms').oninput = (e) => updatePatientData('symptoms', e.target.value);
+            container.querySelector('#input-symptoms').oninput = (e) => updatePatientData('symptoms', e.target.value, true);
             container.querySelector('#btn-next').onclick = () => setStep(5);
         }
         if (state.step === 5) {

@@ -48,9 +48,9 @@
         state.auth.targetRole = role;
     }
 
-    function updatePatientData(key, value) {
+    function updatePatientData(key, value, silent = false) {
         state.patientData[key] = value;
-        notify(); // Ensure UI reflects changes immediately
+        if (!silent) notify(); // Ensure UI reflects changes immediately
     }
 
     function updateQueue(newQueue) {
