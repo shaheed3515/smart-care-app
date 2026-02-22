@@ -327,7 +327,7 @@
                 <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-3xl mb-8 border border-blue-100 relative overflow-hidden">
                     <div class="absolute -right-10 -top-10 w-40 h-40 bg-blue-200/20 rounded-full blur-2xl"></div>
                     <p class="text-slate-500 uppercase tracking-widest text-xs font-bold mb-2">Estimated Fee</p>
-                    <h3 class="text-5xl md:text-6xl font-black text-brand-900 tracking-tighter">₹75.00</h3>
+                    <h3 class="text-5xl md:text-6xl font-black text-brand-900 tracking-tighter">$75.00</h3>
                     <p class="text-slate-400 text-sm mt-4">Includes Consultation & Basic Triage</p>
                 </div>
                 <!-- Summary of Details -->
@@ -393,8 +393,8 @@
 
         // --- STEP 1 HANDLERS (Details) ---
         if (state.step === 1) {
-            container.querySelector('#input-name').oninput = (e) => updatePatientData('name', e.target.value, true);
-            container.querySelector('#input-age').oninput = (e) => updatePatientData('age', e.target.value, true);
+            container.querySelector('#input-name').oninput = (e) => updatePatientData('name', e.target.value);
+            container.querySelector('#input-age').oninput = (e) => updatePatientData('age', e.target.value);
             container.querySelector('#input-gender').onchange = (e) => updatePatientData('gender', e.target.value);
 
             // Radio buttons for doctorPref
@@ -466,7 +466,7 @@
 
         // --- OTHER STEPS ---
         if (state.step === 4) {
-            container.querySelector('#input-symptoms').oninput = (e) => updatePatientData('symptoms', e.target.value, true);
+            container.querySelector('#input-symptoms').oninput = (e) => updatePatientData('symptoms', e.target.value);
             container.querySelector('#btn-next').onclick = () => setStep(5);
         }
         if (state.step === 5) {
